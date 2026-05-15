@@ -19,3 +19,27 @@ Content-Type: application/json
   "email": "sethumdamsavi1@gmail.com",
   "password": "Test@1234"
 }
+
+### Get all charities
+GET http://localhost:5000/api/charities
+
+### Create a charity
+POST http://localhost:5000/api/charities
+Content-Type: application/json
+
+{
+  "name": "Children Education Fund",
+  "description": "Helping underprivileged children access education in Sri Lanka",
+  "target": 500000
+}
+
+### Get charity by ID
+GET http://localhost:5000/api/charities/1
+
+### Follow a charity
+POST http://localhost:5000/api/charities/1/follow
+Content-Type: application/json
+
+{
+  "userId": 1
+}
