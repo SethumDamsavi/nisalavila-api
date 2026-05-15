@@ -43,3 +43,37 @@ Content-Type: application/json
 {
   "userId": 1
 }
+
+### Create online donation
+POST http://localhost:5000/api/donations
+Content-Type: application/json
+
+{
+  "amount": 5000,
+  "userId": 1,
+  "charityId": 1
+}
+
+### Get donations for user
+GET http://localhost:5000/api/donations/user/1
+
+### Get donations for charity
+GET http://localhost:5000/api/donations/charity/1
+
+### Submit offline donation
+POST http://localhost:5000/api/donations/offline
+Content-Type: application/json
+
+{
+  "amount": 10000,
+  "userId": 1,
+  "charityId": 1
+}
+
+### Approve donation (admin)
+PATCH http://localhost:5000/api/donations/1/status
+Content-Type: application/json
+
+{
+  "status": "approved"
+}
