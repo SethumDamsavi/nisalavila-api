@@ -1,0 +1,21 @@
+### Test server
+GET http://localhost:5000/
+
+### Register a user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Sethum",
+  "email": "sethumdamsavi1@gmail.com",
+  "password": "Test@1234"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "sethumdamsavi1@gmail.com",
+  "password": "Test@1234"
+}
