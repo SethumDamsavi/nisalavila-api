@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/charities', require('./routes/charities'))
 app.use('/api/donations', require('./routes/donations'))
+app.use('/api/posts', require('./routes/posts'))
 
 // Test route
 app.get('/', (req, res) => {

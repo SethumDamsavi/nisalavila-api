@@ -36,3 +36,12 @@ model Donation {
   charityId Int
   createdAt DateTime @default(now())
 }
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  image     String?
+  charityId Int
+  createdAt DateTime @default(now())
+}
