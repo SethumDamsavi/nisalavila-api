@@ -84,5 +84,24 @@ router.patch('/:id/status', async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message })
   }
 })
+// Create Stripe payment intent
+router.post('/create-payment-intent', async (req, res) => {
+  try {
+    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+    const { amount } = req.body
 
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: Math.round(amount * 100), // Stripe uses cents
+      currency: 'lkr',
+      payment_method_types: ['card'],
+    })
+
+    res.json({
+      clientSecret: paymentIntent.client_secret,
+      publishableKey: process.env.STRIPE_PUBLISHABLE_KEY
+    })
+  } catch (error) {
+    res.status(500).json({ message: 'Payment error', error: error.message })
+  }
+})
 module.exports = router
