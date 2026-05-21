@@ -45,3 +45,11 @@ model Post {
   charityId Int
   createdAt DateTime @default(now())
 }
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  postId    Int
+  userId    Int
+  userName  String
+  createdAt DateTime @default(now())
+}
