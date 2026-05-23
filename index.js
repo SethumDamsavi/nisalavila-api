@@ -19,6 +19,7 @@ app.use('/api/charities', require('./routes/charities'))
 app.use('/api/donations', require('./routes/donations'))
 app.use('/api/posts', require('./routes/posts'))
 app.use('/api/comments', require('./routes/comments'))
+app.use('/api/likes', require('./routes/likes'))
 
 // Test route
 app.get('/', (req, res) => {
